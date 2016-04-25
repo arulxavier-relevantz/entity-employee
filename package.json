@@ -20,7 +20,7 @@
     "url": "https://github.com/frontians-web/entity-employee/issues"
   },
   "homepage": "https://github.com/frontians-web/entity-employee#readme",
-  "devDependencies": {
+  "dependencies": {
     "body-parser": "^1.14.2",
     "clear": "0.0.1",
     "connect": "^3.4.0",
