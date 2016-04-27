@@ -1,11 +1,11 @@
-
+///// <reference path="../typings/main.d.ts" />
 import {IEmployeeModel} from "./IEmployeeModel";
 import * as Mongoose from "mongoose";
 
 class EmployeeSchema {
-   
-  static get employeeSchema () {
-       let employeeSchema =  new Mongoose.Schema({
+
+  static get mongooseSchema () {
+       let mongooseSchema =  new Mongoose.Schema({
            employeeID: {
                 type: String,
                 required: true,
@@ -37,10 +37,10 @@ class EmployeeSchema {
                 }
             }
        });
-       
-       return employeeSchema;
+
+       return mongooseSchema;
    }
-   
+
 }
-const EmployeeModel = Mongoose.model<IEmployeeModel>("IEmployeeModel", EmployeeSchema.employeeSchema);
+const EmployeeModel = Mongoose.model<IEmployeeModel>("Employee", EmployeeSchema.mongooseSchema);
 export {EmployeeModel};
