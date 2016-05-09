@@ -1,5 +1,6 @@
 import { IEmployeeModel } from "./IEmployeeModel";
 import * as Mongoose from "mongoose";
+let AppPackage = require('../package.json');
 
 class EmployeeSchema {
 
@@ -9,7 +10,7 @@ class EmployeeSchema {
                type: String,
                required: true,
                unique: true,
-               default: process.env.npm_package_version
+               default: AppPackage.version
            },
            employeeID: {
                 type: String,
