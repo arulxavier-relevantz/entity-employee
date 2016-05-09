@@ -1,4 +1,4 @@
-typings
 npm-debug.log
-.DS_Store
 node_modules
+typings/**/*
+!/typings/index.d.ts

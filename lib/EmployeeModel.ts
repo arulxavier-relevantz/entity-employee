@@ -1,39 +1,51 @@
-///// <reference path="../typings/main.d.ts" />
-import {IEmployeeModel} from "./IEmployeeModel";
+import { IEmployeeModel } from "./IEmployeeModel";
 import * as Mongoose from "mongoose";
 
 class EmployeeSchema {
 
   static get mongooseSchema () {
        let mongooseSchema =  new Mongoose.Schema({
+           entityVersion: {
+               type: String,
+               required: true,
+               unique: true,
+               default: process.env.npm_package_version
+           },
            employeeID: {
                 type: String,
                 required: true,
-                unique: true
+                unique: true,
+                default: ""
             },
             name: {
                 first: {
                     type: String,
                     required: true,
-                    errMsg: 'Enter First Name'
+                    errMsg: 'Enter First Name',
+                    default: ""
                 },
                 last: {
                     type: String,
-                    required: true
+                    required: true,
+                    default: ""
                 }
             },
             address: {
                 lines: {
-                    type: [String]
+                    type: [String],
+                    default: [""]
                 },
                 city: {
-                    type: String
+                    type: String,
+                    default: ""
                 },
                 state: {
-                    type: String
+                    type: String,
+                    default: ""
                 },
                 zip: {
-                    type: Number
+                    type: Number,
+                    default: new Number("00000")
                 }
             }
        });
@@ -43,4 +55,4 @@ class EmployeeSchema {
 
 }
 const EmployeeModel = Mongoose.model<IEmployeeModel>("Employee", EmployeeSchema.mongooseSchema);
-export {EmployeeModel};
+export { EmployeeModel };
