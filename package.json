@@ -1,6 +1,6 @@
 {
   "name": "entity-employee",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Employee Interface and Model Entity",
   "main": "index.js",
   "scripts": {
