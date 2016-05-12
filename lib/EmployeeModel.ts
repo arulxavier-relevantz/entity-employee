@@ -9,14 +9,12 @@ class EmployeeSchema {
            entityVersion: {
                type: String,
                required: true,
-               unique: true,
                default: AppPackage.version
            },
            employeeID: {
                 type: String,
                 required: true,
-                unique: true,
-                default: ""
+                unique: true
             },
             name: {
                 first: {
